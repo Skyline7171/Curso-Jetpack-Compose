@@ -17,7 +17,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoJetpackComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MainView(Modifier.padding(innerPadding))
+                    MainView(Modifier.padding(innerPadding), listOf(
+                        Device(1, "Samsung", Specs("Negro", "128GB")),
+                        Device(2, "Nexus", Specs("Blanco", "64GB"))))
                 }
             }
         }

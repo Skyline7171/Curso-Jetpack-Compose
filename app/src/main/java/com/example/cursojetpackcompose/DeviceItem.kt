@@ -17,15 +17,20 @@ import com.example.cursojetpackcompose.ui.theme.CursoJetpackComposeTheme
 import com.example.cursojetpackcompose.ui.theme.Typography
 
 @Composable
-fun DeviceView(device: Device) {
+fun DeviceItemView(device: Device) {
 
-    Row(verticalAlignment = Alignment.CenterVertically) {
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
         Icon(imageVector = Icons.Default.Phone, contentDescription = null, modifier = Modifier.padding(horizontal = 16.dp))
 
         Column {
             Text(text = device.name, style = Typography.headlineSmall)
-            Text(text = device.data?.color ?: "-", style = Typography.bodyMedium)
-            Text(text = device.data?.capacity ?: "-", style = Typography.bodyMedium)
+
+            if (device.data?.color != null) {
+                Text(text = device.data.color, style = Typography.bodyMedium)
+            }
+            if (device.data?.capacity != null) {
+                Text(text = device.data.capacity, style = Typography.bodyMedium)
+            }
 
             HorizontalDivider()
         }
@@ -34,8 +39,8 @@ fun DeviceView(device: Device) {
 
 @Preview(showBackground = true)
 @Composable
-fun DevicePreview() {
+fun DeviceItemPreview() {
     CursoJetpackComposeTheme {
-        DeviceView(device = Device(1, "Samsung", Specs("Negro", "128GB")))
+        DeviceItemView(device = Device(1, "Samsung", Specs("Negro", "128GB")))
     }
 }
