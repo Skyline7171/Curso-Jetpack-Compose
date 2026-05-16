@@ -26,10 +26,13 @@ fun DeviceItemView(device: Device) {
             Text(text = device.name, style = Typography.headlineSmall)
 
             if (device.data?.color != null) {
-                Text(text = device.data.color, style = Typography.bodyMedium)
+                Text(text = "Color: ${device.data.color}", style = Typography.bodyMedium)
             }
             if (device.data?.capacity != null) {
-                Text(text = device.data.capacity, style = Typography.bodyMedium)
+                Text(text =  "Capacidad: ${device.data.capacity}", style = Typography.bodyMedium)
+            }
+            if (device.data?.price != null) {
+                Text(text = "Precio: ${device.data.price}", style = Typography.bodyMedium)
             }
 
             HorizontalDivider()
@@ -41,6 +44,6 @@ fun DeviceItemView(device: Device) {
 @Composable
 fun DeviceItemPreview() {
     CursoJetpackComposeTheme {
-        DeviceItemView(device = Device(1, "Samsung", Specs("Negro", "128GB")))
+        DeviceItemView(device = Device(1, "Samsung", Specs("Negro", "128GB", null)))
     }
 }

@@ -31,7 +31,7 @@ fun MainView(modifier: Modifier, devices: List<Device>) {
 fun MainPreview() {
     CursoJetpackComposeTheme {
         MainView(Modifier.padding(top = 24.dp), listOf(
-            Device(1, "Samsung", Specs("Negro", "128GB")),
+            Device(1, "Samsung", Specs("Negro", "128GB", null)),
             Device(2, "Nexus", null)))
     }
 }
