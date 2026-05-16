@@ -1,5 +1,7 @@
 package com.example.cursojetpackcompose
 
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -12,7 +14,7 @@ import com.example.cursojetpackcompose.ui.theme.Typography
 
 @Composable
 fun MainView(modifier: Modifier) {
-    Text(text = "Comprar", modifier = modifier, style = Typography.displayMedium, textAlign = TextAlign.Center)
+    Text(text = "Comprar", modifier = modifier.fillMaxWidth(), style = Typography.displayMedium, textAlign = TextAlign.Center)
 }
 
 @Preview(showBackground = true, showSystemUi = true)
